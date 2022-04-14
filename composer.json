@@ -1,0 +1,18 @@
+{
+    "name": "JulioOrtaHdz/php-mt5",
+    "description": "A Metatrader 5 Web API Wrapper for Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Julio Alejandro Orta Hernandez",
+            "email": "julio_oh86@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "JulioOrtaHdz\\PhpMeta\\": "src/"
+        }
+    },
+    "require": {}
+}
