@@ -137,7 +137,3 @@ Thank you for considering contributing to the Laravel MT5! you can fork this rep
 ## Security Vulnerabilities
 
 If you discover a security vulnerability within Laravel MT5, please send an e-mail to Julio Alejandro Orta Hernandez via [julio_oh86@hotmail.com](mailto:julio_oh86@hotmail.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
