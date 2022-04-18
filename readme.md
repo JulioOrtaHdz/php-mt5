@@ -10,7 +10,7 @@ This is PHP Package for MT5 Web API
 ### Installing 
 To install the package, in terminal:
 ```
-composer require JulioOrtaHdz/php-mt5
+composer require julioortahdz/php-mt5
 ```
 
 ## Usage
