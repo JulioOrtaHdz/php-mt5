@@ -27,6 +27,7 @@ use JulioOrtaHdz\PhpMeta\Lib\MTDealProtocol;
 use JulioOrtaHdz\PhpMeta\Lib\MTGroupProtocol;
 use JulioOrtaHdz\PhpMeta\Entities\Order;
 use JulioOrtaHdz\PhpMeta\Lib\CMT5Request;
+use JulioOrtaHdz\PhpMeta\Lib\MTCommonProtocol;
 
 //+------------------------------------------------------------------+
 //--- web api version
@@ -175,6 +176,9 @@ class MetaTraderClient
         $mtUser->Group = $user->getGroup();
         $mtUser->Leverage = $user->getLeverage();
         $mtUser->ZipCode = $user->getZipCode();
+        //Nuevas propiedades agregadas al crear un usuario
+        $mtUser->Balance = $user->getComment();
+        $mtUser->Comment = $user->getAgent();
 
         $newMtUser = MTUser::CreateDefault();
         $result = $mt_user->Add($mtUser, $newMtUser);
@@ -758,4 +762,28 @@ class MetaTraderClient
         return true;
     }
 
+    public function getCommonConfiguration()
+    {        
+        if (!$this->isConnected()) { //Se verifica la conexión, si no esta se ejecuta el metodo "connected".
+            $conn = $this->connect();
+
+            if ($conn != MTRetCode::MT_RET_OK) { //Se verifica que la conexión con el servidor MT5 se haya ejecutado correctamente
+                throw new ConnectionException(MTRetCode::GetError($conn));
+            }
+        }
+
+        $ConfigComObtenido = null; //Variable que almacena la información devuelta por la MT5.
+        //dd("Aqui getCommonConfiguration",$this->m_connect);
+        $Common_Protocol = new MTCommonProtocol($this->m_connect); //Se crea una nueva instancia de la clase "MTCommonProtocol".
+        //dd("Aqui common",$Common_Protocol);
+        //Con la instancia se llama al metodo deseado pasando la variable nula que es donde se cargara la información de respuesta.
+        $result = $Common_Protocol->CommonGet($ConfigComObtenido); 
+        //dd("Result",$result);
+        if ($result != MTRetCode::MT_RET_OK) {
+            throw new UserException(MTRetCode::GetError($result));
+        }
+        return $ConfigComObtenido;
+    }
+
+    
 }
