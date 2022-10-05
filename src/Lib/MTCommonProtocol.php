@@ -1,4 +1,6 @@
 <?php
+
+namespace JulioOrtaHdz\PhpMeta\Lib;
 //+------------------------------------------------------------------+
 //|                                             MetaTrader 5 Web API |
 //|                   Copyright 2001-2019, MetaQuotes Software Corp. |
@@ -117,7 +119,7 @@ class MTCommonGetAnswer
     $result->TotalOrders = (int)$obj->TotalOrders;
     $result->TotalOrdersHistory = (int)$obj->TotalOrdersHistory;
     $result->TotalPositions = (int)$obj->TotalPositions;
-    $result->AccountURL = (string)$obj->AccountURL;
+    $result->AccountURL = (string)$obj->AccountUrl;
     $result->AccountAuto = (int)$obj->AccountAuto;
     //---
     $obj = null;
