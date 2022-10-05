@@ -24,6 +24,23 @@ class User
     protected $phone;
     protected $phone_password;
     protected $investor_password;
+    //Se agregan nuevo campos (Propiedades a la clase de la libreria)
+    protected $MQID; //Campo Agregado a la librería
+    protected $Company; //Campo Agregado a la librería
+    protected $Account; //Campo Agregado a la librería
+    protected $Language; //Campo Agregado a la librería
+    protected $ClientID; //Campo Agregado a la librería
+    protected $ID; //Campo Agregado a la librería
+    protected $Status; //Campo Agregado a la librería
+    protected $Comment; //Campo Agregado a la librería
+    protected $Agent; //Campo Agregado a la librería
+    protected $Balance; //Campo Agregado a la librería
+    protected $Credit; //Campo Agregado a la librería
+    protected $InterestRate; //Campo Agregado a la librería
+    protected $CommissionDaily; //Campo Agregado a la librería
+    protected $CommissionMonthly; //Campo Agregado a la librería
+    protected $LeadCampaign; //Campo Agregado a la librería
+    protected $LeadSource; //Campo Agregado a la librería
 
     /**
      * @return mixed
@@ -226,5 +243,228 @@ class User
         return $this;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getMQID()
+    {
+        return $this->MQID;
+    }
+
+    public function setMQID($MQID)
+    {
+        $this->MQID = $MQID;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCompany()
+    {
+        return $this->Company;
+    }
+
+    public function setCompany($Company)
+    {
+        $this->Company = $Company;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAccount()
+    {
+        return $this->Account;
+    }
+
+    public function setAccount($Account)
+    {
+        $this->Account = $Account;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLanguage()
+    {
+        return $this->Language;
+    }
+
+    public function setLanguage($Language)
+    {
+        $this->Language = $Language;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClientID()
+    {
+        return $this->ClientID;
+    }
+
+    public function setClientID($ClientID)
+    {
+        $this->ClientID = $ClientID;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getID()
+    {
+        return $this->ID;
+    }
+
+    public function setID($ID)
+    {
+        $this->ID = $ID;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->Status;
+    }
+
+    public function setStatus($Status)
+    {
+        $this->Status = $Status;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getComment()
+    {
+        return $this->Comment;
+    }
+
+    public function setComment($Comment)
+    {
+        $this->Comment = $Comment;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAgent()
+    {
+        return $this->Agent;
+    }
+
+    public function setAgent($Agent)
+    {
+        $this->Agent = $Agent;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBalance()
+    {
+        return $this->Balance;
+    }
+
+    public function setBalance($Balance)
+    {
+        $this->Balance = $Balance;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCredit()
+    {
+        return $this->Credit;
+    }
+
+    public function setCredit($Credit)
+    {
+        $this->Credit = $Credit;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getInterestRate()
+    {
+        return $this->InterestRate;
+    }
+
+    public function setInterestRate($InterestRate)
+    {
+        $this->InterestRate = $InterestRate;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommissionDaily()
+    {
+        return $this->CommissionDaily;
+    }
+
+    public function setCommissionDaily($CommissionDaily)
+    {
+        $this->CommissionDaily = $CommissionDaily;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCommissionMonthly()
+    {
+        return $this->CommissionMonthly;
+    }
+
+    public function setCommissionMonthly($CommissionMonthly)
+    {
+        $this->CommissionMonthly = $CommissionMonthly;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLeadCampaign()
+    {
+        return $this->LeadCampaign;
+    }
+
+    public function setLeadCampaign($LeadCampaign)
+    {
+        $this->LeadCampaign = $LeadCampaign;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLeadSource()
+    {
+        return $this->LeadSource;
+    }
+
+    public function setLeadSource($LeadSource)
+    {
+        $this->LeadSource = $LeadSource;
+        return $this;
+    }
 
 }
