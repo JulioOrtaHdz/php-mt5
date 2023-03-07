@@ -1,4 +1,6 @@
 <?php
+
+namespace JulioOrtaHdz\LaravelMt5\Lib;
 //+------------------------------------------------------------------+
 //|                                             MetaTrader 5 Web API |
 //|                   Copyright 2001-2019, MetaQuotes Software Corp. |
