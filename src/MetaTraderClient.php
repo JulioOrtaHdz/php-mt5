@@ -28,6 +28,7 @@ use JulioOrtaHdz\PhpMeta\Lib\MTGroupProtocol;
 use JulioOrtaHdz\PhpMeta\Entities\Order;
 use JulioOrtaHdz\PhpMeta\Lib\CMT5Request;
 use JulioOrtaHdz\PhpMeta\Lib\MTCommonProtocol;
+use JulioOrtaHdz\LaravelMt5\Lib\MTTimeProtocol;
 
 //+------------------------------------------------------------------+
 //--- web api version
@@ -785,5 +786,28 @@ class MetaTraderClient
         return $ConfigComObtenido;
     }
 
-    
+    public function getTimeServer()
+    {
+        $timeServer = null;
+        if (!$this->isConnected()) {
+            $conn = $this->connect();
+
+            if ($conn != MTRetCode::MT_RET_OK) {
+                throw new ConnectionException(MTRetCode::GetError($conn));
+            }
+        }
+        $time_protocol = new MTTimeProtocol($this->m_connect);
+        $timeServer = $time_protocol->TimeServer();
+
+        /* $mt_user = new MTDealProtocol($this->m_connect);
+        $result = $mt_user->DealGet($ticket, $timeServer);
+        if ($result != MTRetCode::MT_RET_OK) {
+            throw new UserException(MTRetCode::GetError($result));
+        } */
+        if($timeServer == 0) {
+            $timeServer = null;
+        }
+
+        return $timeServer;
+    }
 }
