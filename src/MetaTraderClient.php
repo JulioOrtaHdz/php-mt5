@@ -29,6 +29,7 @@ use JulioOrtaHdz\PhpMeta\Entities\Order;
 use JulioOrtaHdz\PhpMeta\Lib\CMT5Request;
 use JulioOrtaHdz\PhpMeta\Lib\MTCommonProtocol;
 use JulioOrtaHdz\LaravelMt5\Lib\MTTimeProtocol;
+use JulioOrtaHdz\PhpMeta\Lib\MTMailProtocol;
 
 //+------------------------------------------------------------------+
 //--- web api version
@@ -810,4 +811,23 @@ class MetaTraderClient
 
         return $timeServer;
     }
+
+    public function MailSend($to, $subject, $text)
+    {
+        if (!$this->isConnected()) {
+            $conn = $this->connect();
+
+            if ($conn != MTRetCode::MT_RET_OK) {
+                throw new ConnectionException(MTRetCode::GetError($conn));
+            }
+        }
+        $mt_user = new MTMailProtocol($this->m_connect);
+        $result = $mt_user->MailSend($to, $subject, $text);
+        if ($result != MTRetCode::MT_RET_OK) {
+            return false;
+            //throw new UserException(MTRetCode::GetError($result));
+        }
+        return true;
+    }
+    
 }
